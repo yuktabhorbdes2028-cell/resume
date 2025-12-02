@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <style>
+      :root{
+        --primary-red: #C53B3B;
+        --primary-red-dark: #3e0000;
+      }
+
+       html {
+       scroll-behavior: smooth;
+     }
+
+
+      /* Navbar container */
+      .navbar-custom{
+        background: transparent;
+        padding: 1rem 0;
+         position: sticky;
+       top: 0;
+       z-index: 1000;
+       backdrop-filter: blur(10px);
+       background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Brand on left */
+      .navbar-brand.custom-brand{
+        color:#C53B3B;
+        font-weight: 900;
+        letter-spacing: 2px;
+        font-size: 1.3rem;
+      }
+
+      /* Right side pill buttons */
+      .navbar-nav .nav-link {
+        background: var(--primary-red);
+        color: #fff !important;
+        border-radius: 30px;
+       padding: 0.5rem 1.2rem;
+       margin-left: 0;
+        
+text-transform: uppercase;
+        font-size: 1rem;
+        letter-spacing: .06rem;
+         transition: .15s ease, transform .08s ease;
+       font-weight: 600;
+       display: inline-block;
+       white-space: nowrap;
+        
+        
+      }
+
+           .navbar-nav {
+       gap: 0.8rem;
+     }
+
+      .navbar-nav .nav-link:hover{
+        background: var(--primary-red-dark);
+        color: #fff !important;
+        transform: translateY(-1px);
+      }
+
+      .navbar-nav .nav-link.active{
+        background: #a41c1c;
+        box-shadow: 0 4px 10px rgba(0,0,0,.12);
+      }
+
+      /* Make toggler visible on small screens */
+      .navbar-toggler{
+        border: none;
+      }
+/* Hero Section */
+      .hero-section {
+        background: url('images/Bootstrap/images/RED.jpg') no-repeat center;
+        background-size: cover;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fff;
+        margin-top: 0.5rem; /* ensures hero sits below the navbar */
+      }
+            
+        
+        
+        .hero-title {
+            font-size: 180px;
+            font-weight: 800;
+            letter-spacing: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.2rem;
+            margin-top: -0.5rem;
+        }
+
+/* About section styles */
+     .about-section{
+       padding: 4rem 0;
+     }
+     .about-title{
+       font-size:70px;
+       font-weight: 900;
+       color:#C53B3B;
+       letter-spacing: 2px;
+       text-align: center;
+       margin-bottom: 50px;
+     }
+     .about-text{
+        margin-top: 50px;
+       color: #000000;
+       font-weight: 600;
+       font-size:18px;
+       line-height: 1.7;     
+       max-width: 90ch;
+       margin: 0 auto;
+  }
+
+  
+   @media (min-width: 768px) {
+      .about-text { font-size: 20px; }
+    }
+    @media (min-width: 1200px) {
+      .about-text { font-size: 22px; }
+    }
+
+     .about-image{
+       width: 100%;
+      max-width: 400px;
+       border-radius: 10px;
+       object-fit:cover
+      
+    }
+     .about-actions .btn{
+       background-color: #C53B3B;
+       border:#000000;
+       color: #fff;
+       font-size: larger;
+         font-weight: 600;
+       border-radius: 20px;
+       padding: 20px 20px;
+       margin-right: .6rem;
+       
+        gap: 30px;          /* controls space between buttons - increase value to enlarge gap */
+      
+       margin-top: 1rem;
+     }
+     .about-cards .card{
+       border-radius: 12px;
+       border: 1px solid rgba(140, 18, 18, 0.25);
+       padding: 20px;
+         box-shadow: 0 4px 8px rgba(0,0,0,.05);
+         font-size: larger
+     }
+     .software-icons i{ font-size: 20px; margin-right: 10px; color: #222; }
+     /* small gap between hero and about */
+     header.hero-section 
+    .container { margin-top: 20px ; }
+
+        /* Projects Section Styles */
+    .projects-header {
+      background-color: var(--primary-red);
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      margin: 3rem 0 2rem 0;
+    }
+
+    .projects-header h2 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 3rem 0;
+      place-items: center;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+     gap: 2rem;
+      padding: 3rem 0;
+      place-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+
+
+
+
+
+    }
+
+ .project-card {
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .project-image {
+     width: 100%;
+      max-width: 5000px;
+      height: 350px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      opacity: 1;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+
+    }
+
+    .project-image:hover {
+      opacity: 0.3;
+      transform: scale(1.05);
+    }
+    .project-label {
+      font-size: 30px;
+      font-weight: 800;
+      color: #000;
+      margin-top: 5px;
+      letter-spacing: 1px;
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    }
+ .project-card:hover .project-label {
+      opacity: 0;
+    }
+
+    .project-number {
+      
+      font-size: 1.8rem;
+      font-weight: 900;
+      color:#000000;
+      position: absolute;
+      top: 50%;
+        left: 60%;
+      
+      transform: translateX(-70%);
+       opacity: 0;
+       transition: opacity 0.4s ease;
+       pointer-events: none;
+      z-index: 10;
+      
+    }
+
+    .project-card:hover .project-number {
+      opacity: 1;
+    }
+/* Contact Section */
+    .contact-section {
+      background: var(--primary-red);
+      padding: 4rem 3rem;
+      margin-top: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+    }
+
+    .contact-left {
+      color: #fff;
+      text-align: center;
+      
+      flex: 1;
+    }
+
+    .contact-left h1 {
+      font-size: 100PX;
+      font-weight: 900;
+      letter-spacing: 2px;
+      line-height: 1.2;
+    }
+
+.contact-right {
+    font-size: larger;
+      background: #fff;
+      padding: 30PX;
+      border-radius: 8px;
+      flex: 1;
+      min-width: 500px;
+    }
+
+    .contact-item {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .contact-item h2 {
+      font-size: 60PX;
+    
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: #000;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-item p {
+      font-size: 20PX;
+      color: #000000;
+     
+    }
+
+ .contact-item a {
+      color: #000000;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-item a:hover {
+      color: var(--primary-red);
+    }
+
+    @media (max-width: 768px) {
+      .contact-section {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .contact-left h2 {
+        font-size: 2.5rem;
+      }
+    }
+
+
+   /* Project Detail Modal */
+   .project-modal {
+     display: none;
+     position: fixed;
+     z-index: 2000;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.6);
+     overflow-y: auto;
+     animation: fadeIn 0.3s ease;
+   }
+
+   .project-modal.active {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+
+   @keyframes fadeIn {
+     from { opacity: 0; }
+     to { opacity: 1; }
+   }
+
+.project-modal-content {
+     background: #fff;
+     padding: 3rem;
+     border-radius: 12px;
+     max-width: 1000px;
+     width: 90%;
+     max-height: 90vh;
+     overflow-y: auto;
+     position: relative;
+     animation: slideUp 0.3s ease;
+   }
+
+   @keyframes slideUp {
+     from { transform: translateY(50px); opacity: 0; }
+     to { transform: translateY(0); opacity: 1; }
+   }
+
+ .project-modal-close {
+    position: absolute;
+     top: 1.5rem;
+     right: 1.5rem;
+     font-size: 2rem;
+     cursor: pointer;
+     color: var(--primary-red);
+     background: none;
+     border: none;
+     font-weight: bold;
+     transition: color 0.2s ease;
+   }
+
+   .project-modal-close:hover {
+     color: #000;
+   }
+
+   .project-detail-title {
+     color: var(--primary-red);
+     font-size: 2.5rem;
+     font-weight: 900;
+     margin-bottom: 1.5rem;
+     letter-spacing: 1px;
+   }
+   .project-detail-container {
+     display: grid;
+     grid-template-columns: 1fr 1.2fr;
+     gap: 2rem;
+     align-items: start;
+   }
+
+   .project-detail-desc {
+     background: var(--primary-red);
+     color: #fff;
+     padding: 2rem;
+     border-radius: 12px;
+     line-height: 1.8;
+     font-size: 1rem;
+   }
+
+   .project-detail-images {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 1rem;
+   }
+
+   .project-detail-images img {
+     width: 100%;
+     border-radius: 8px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   }
+
+ @media (max-width: 768px) {
+     .project-detail-container {
+       grid-template-columns: 1fr;
+     }
+     .project-modal-content {
+       padding: 1.5rem;
+     }
+     .project-detail-title {
+     font-size: 1.8rem;
+        }   }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+  <body>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+     <div class="container">
+        <a class="navbar-brand custom-brand" href="#">YB|DESIGN</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+         <ul class="navbar-nav align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">ABOUT</a>
+            </li>
+           <li class="nav-item">
+            <a class="nav-link" href="#projects-section">PROJECTS</a>
+                  </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">CONTACT</a>
+            </li>
+          </ul>
+       </div>
+      </div>
+    </nav>
+    <header class="hero-section" id="home">
+      <h1 class="hero-title">PORTFOLIO</h1>
+      <p class="hero-subtitle">YUKTA BHOR</p>
+    </header>
+    <!-- About Section (place below hero with a bit of space) -->
+    <section class="container about-section" id="about">
+      <div class="row align-items-center gy-4">
+        <div class="col-md-4 text-center">
+          <img src="images/Bootstrap/images/pp.jpg" alt="Yukta" class="about-image mx-auto d-block">
+        </div>
+        <div class="col-md-8">
+          <h2 class="about-title mb-3">ABOUT ME</h2>
+          <p class="about-text">
+           I am Yukta, a 19 year old from Mumbai, Maharashtra, who loves art and design and is a passionate Graphic Designer 
+           and loves transforming ideas into visuals that connect. Skilled in Adobe Illustrator, Photoshop, InDesign, CapCut, 
+           I create designs that tell stories and stand out. From posters and campaigns to product photos and videos, I enjoy 
+           crafting visuals that engage and inspire while staying true to each brand’s identity and exploring fresh, creative styles.
+          </p>
+          <div class="about-actions mt-3 mb-4">
+            <button class="btn">Digital Illustrations</button>
+            <button class="btn">Graphic Design</button>
+            <button class="btn">Video Editing</button>
+          </div>
+          <div class="row about-cards g-3">
+            <div class="col-sm-6">
+             <div class="card h-100 align-items-center">
+                <h5 class="mb-2"><strong>EDUCATION</strong></h5>
+                <p class="mb-0">Atlas SkillTech University<br> BDes (Bachelors of Design) 2024-28</p>
+              </div>
+            </div>
+           <div class="col-sm-6">
+              <div class="card h-100 d-flex align-items-center">
+                <h5 class="mb-2"><STRONG>SOFTWARE</STRONG></h5>
+                <div class="software-icons">
+                
+                <img src="images/Bootstrap/images/photoshop.png" alt="Photoshop" width="40px" height="40px">
+                <img src="images/Bootstrap/images/image-removebg-preview (5).png" alt="Illustrator" width="40px" height="40px" border-radius="20px">
+                <img src="images/Bootstrap/images/indesign.png" alt="InDesign" width="40px" height="40px">
+                <img src="images/Bootstrap/images/canva.png" alt="Canva" width="40px" height="40px" >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+            <section class="container about-section" id="about"></section>
+    <div class="projects-header" id="projects-section">
+      <h2>PROJECTS</h2>
+    </div>
+
+    <div class="container">
+      <div class="projects-container">
+
+         <!-- Project 1 (now links to project1.html) -->
+       
+        <a href="project 1.html" class="project-card-link" aria-label="Open Project 1">
+          <div class="project-card">
+            <div style="position: relative; display: inline-block;">
+              <img src="images/Bootstrap/images/br 2.png" alt="Project 1" class="project-image">
+              <div class="project-number">PROJECT 1</div>
+            </div>
+            <p class="project-label">PROJECT 1</p>
+          </div>
+        </a>
+
+
+        <!-- Project 2 -->
+         <a href="project 2.html" class="project-card-link" aria-label="Open Project 2">
+          <div class="project-card">
+          <div style="position: relative; display: inline-block; cursor: pointer;">
+            <img src="images/Bootstrap/images/campaign 1.png" alt="Project 2" class="project-image">
+            <div class="project-number">PROJECT 2</div>
+          </div>
+         <p class="project-label">PROJECT 2</p>
+          </div>
+        </a>
+
+        <!-- Project 3 -->
+       <a href="project 3.html" class="project-card-link" aria-label="Open Project 3">
+          <div class="project-card">
+          <div style="position: relative; display: inline-block; cursor: pointer;">
+            <img src="images/Bootstrap/images/da.png" alt="Project 3" class="project-image">
+            <div class="project-number">PROJECT 3</div>
+          </div>
+          <p class="project-label">PROJECT 3</p>
+        </div>
+       </a>
+
+        <!-- Project 4 -->
+        <a href="project 4.html" class="project-card-link" aria-label="Open Project 4">
+         <div class="project-card">
+          <div style="position: relative; display: inline-block; cursor: pointer;">
+            <img src="images/Bootstrap/images/movie poster.png" alt="Project 4" class="project-image">
+            <div class="project-number">PROJECT 4</div>
+          </div>
+          <p class="project-label">PROJECT 4</p>
+        </div>
+        </a>
+        </div>
+        </div>
+    
+
+   <!-- Project Detail Modal -->
+   <div id="projectModal" class="project-modal" onclick="closeProjectModal(event)">
+     <div class="project-modal-content" onclick="event.stopPropagation()">
+       <button class="project-modal-close" onclick="closeProjectModal()">&times;</button>
+       
+       <h2 class="project-detail-title" id="modalProjectTitle">PROJECT 1</h2>
+       
+       <div class="project-detail-container">
+         <div class="project-detail-desc" id="modalProjectDesc">
+           This project includes a 3 fold brochure for a medical device called Peak Flow Meter. It includes how the device works, its functions, features and more information about the device.
+         </div>
+         <div class="project-detail-images" id="modalProjectImages">
+           <img src="images/Bootstrap/images/br 2.png" alt="Project detail 1">
+           <img src="images/Bootstrap/images/br 2.png" alt="Project detail 2">
+           <img src="images/Bootstrap/images/br 2.png" alt="Project detail 3">
+           <img src="images/Bootstrap/images/br 2.png" alt="Project detail 4">
+         </div>
+       </div>
+     </div>
+   </div>
+
+    <!-- Contact Section -->
+
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="contact-left STRONG">
+        <h1>WORK<br>WITH<br>ME</h1>
+      </div>
+      <div class="contact-right">
+        <div class="contact-item">
+          <h4>MAIL</h4>
+          <p><a href="mailto:yukta.bhor.bdes2028@atlasskillttech.university">yukta.bhor.bdes2028@atlasskillttech.university</a></p>
+        </div>
+        <div class="contact-item">
+          <h4>CONTACT NUMBER</h4>
+          <p><a href="tel:7021761018">7021761018</a></p>
+        </div>
+        <div class="contact-item">
+          <h4>SOCIAL MEDIA</h4>
+          <p><a href="https://www.instagram.com/_.yuktab._/?hl=en" target="_blank">https://www.instagram.com/_yuktab_/?hl=en</a></p>
+        </div>
+      </div>
+    </section>
+       </section>
+   <script>
+     const projectData = {
+       1: {
+         title: "PROJECT 1",
+         desc: "This project includes a 3 fold brochure for a medical device called Peak Flow Meter. It includes how the device works, its functions, features and more information about the device.",
+         images: ["images/Bootstrap/images/br 2.png", "images/Bootstrap/images/br 2.png", "images/Bootstrap/images/br 2.png", "images/Bootstrap/images/br 2.png"]
+       },
+       2: {
+         title: "PROJECT 2",
+         desc: "A comprehensive design project showcasing branding and marketing materials for a health tech product.",
+         images: ["images/Bootstrap/images/campaign 1.png", "images/Bootstrap/images/campaign 1.png", "images/Bootstrap/images/campaign 1.png", "images/Bootstrap/images/campaign 1.png"]
+       },
+       3: {
+         title: "PROJECT 3",
+         desc: "Digital design project featuring modern aesthetics and user-centered design principles.",
+         images: ["images/Bootstrap/images/da.png", "images/Bootstrap/images/da.png", "images/Bootstrap/images/da.png", "images/Bootstrap/images/da.png"]
+       },
+       4: {
+         title: "PROJECT 4",
+         desc: "Creative movie poster design with stunning visual composition and typography.",
+         images: ["images/Bootstrap/images/movie poster.png", "images/Bootstrap/images/movie poster.png", "images/Bootstrap/images/movie poster.png", "images/Bootstrap/images/movie poster.png"]
+       }
+     };
+
+     function openProjectModal(projectNum) {
+       const modal = document.getElementById("projectModal");
+       const data = projectData[projectNum];
+       
+       document.getElementById("modalProjectTitle").textContent = data.title;
+       document.getElementById("modalProjectDesc").textContent = data.desc;
+       
+       const imagesHTML = data.images.map(img => `<img src="${img}" alt="${data.title}">`).join('');
+       document.getElementById("modalProjectImages").innerHTML = imagesHTML;
+       
+       modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+     }
+
+     function closeProjectModal(event) {
+       if (event && event.target.id !== "projectModal") return;
+       const modal = document.getElementById("projectModal");
+       modal.classList.remove("active");
+       document.body.style.overflow = "auto";
+     }
+   </script>
+   </body>
+</html>    </section>
+ 
+   
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+    
+  </body>
+</html>
